@@ -5,5 +5,6 @@ The client side code of both versions uses React, and the improvement of this ve
 - TDD (strict!)
 - Typescript
 - Trunk-based development
+- Experimenting with the use of gitmoji
 
 I also plan to set up a CI/CD pipeline in the near future for deployment.
