@@ -13,13 +13,13 @@ describe('Main landing page', () => {
   it('has a top navigation bar', () => {
     const { queryByTestId } = render(<App/>, {wrapper: MemoryRouter});
     expect(queryByTestId('navigation-bar')).toBeInTheDocument();
-  })
+  });
 
   it('has a home page title and tag line', ()=>{
     const { getByText } = render(<App />, {wrapper: MemoryRouter});
     expect(getByText('glūck')).toBeInTheDocument();
     expect(getByText('gifting made happy')).toBeInTheDocument();
-  })
+  });
 
   it('has a button find out more to go to About page',  () => {
     const { getByText } = render(<App />, {wrapper: MemoryRouter});
