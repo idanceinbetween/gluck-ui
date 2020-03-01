@@ -1,23 +1,34 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
+import { MainNavigation } from "./mainNavigation/MainNavigation";
+
+function Landing(): ReactElement {
+  return (
+    <>
+      <div>glūck</div>
+      <div>gifting made happy</div>
+      <Link to={"/about"}>
+        <button>Find out more</button>
+      </Link>
+    </>
+  );
+}
 
 function App() {
   return (
-    <Router>
+    <>
+      <MainNavigation />
       <Switch>
         <Route path="/about">
           <div>About Page</div>
         </Route>
+
         <Route path="/">
-          <div>glūck</div>
-          <div data-testid={"navigation-bar"}>gifting made happy</div>
-          <Link to={"/about"}>
-            <button>Find out more</button>
-          </Link>
+          <Landing />
         </Route>
       </Switch>
-    </Router>
+    </>
   );
 }
 

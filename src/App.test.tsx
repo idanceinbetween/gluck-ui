@@ -1,9 +1,9 @@
 import React from "react";
 import App from "./App";
 import { createMemoryHistory } from "history";
-import { render, wait } from "@testing-library/react";
+import { wait } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { MemoryRouter } from "react-router-dom";
+import { renderWithRouter } from "./testUtils";
 
 describe("Main landing page", () => {
   it("this test should pass", () => {
@@ -11,23 +11,33 @@ describe("Main landing page", () => {
   });
 
   it("has a top navigation bar", () => {
-    const { queryByTestId } = render(<App />, { wrapper: MemoryRouter });
+    const { queryByTestId } = renderWithRouter(<App />);
     expect(queryByTestId("navigation-bar")).toBeInTheDocument();
   });
 
   it("has a home page title and tag line", () => {
-    const { getByText } = render(<App />, { wrapper: MemoryRouter });
-    expect(getByText("glūck")).toBeInTheDocument();
+    const { getByText } = renderWithRouter(<App />);
     expect(getByText("gifting made happy")).toBeInTheDocument();
   });
 
   it("has a button find out more to go to About page", () => {
-    const { getByText } = render(<App />, { wrapper: MemoryRouter });
+    const { getByText } = renderWithRouter(<App />);
     const history = createMemoryHistory();
     userEvent.click(getByText("Find out more"));
     wait(() => {
       expect(getByText("About Page")).toBeInTheDocument();
       expect(history.location.pathname).toEqual("/about");
+    });
+  });
+
+  it("clicks on a heading on Navigation Bar, goes to that page, and navigation bar is still there", () => {
+    const { getByText, getByTestId } = renderWithRouter(<App />);
+    const history = createMemoryHistory();
+    userEvent.click(getByText("About"));
+    wait(() => {
+      expect(getByText("About Page")).toBeInTheDocument();
+      expect(history.location.pathname).toEqual("/about");
+      expect(getByTestId("navigation-bar")).toBeInTheDocument();
     });
   });
 });
