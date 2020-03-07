@@ -10,9 +10,9 @@ describe("Main landing page", () => {
     expect(true).toBeTruthy();
   });
 
-  it("has a top navigation bar", () => {
-    const { queryByTestId } = renderWithRouter(<App />);
-    expect(queryByTestId("navigation-bar")).toBeInTheDocument();
+  it("has a navigation bar", () => {
+    const { queryByRole } = renderWithRouter(<App />);
+    expect(queryByRole("navigation")).toBeInTheDocument();
   });
 
   it("has a home page title and tag line", () => {
