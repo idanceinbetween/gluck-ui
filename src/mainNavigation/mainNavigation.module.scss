@@ -1,0 +1,51 @@
+@import 'src/index.scss';
+
+$nav-height: 80px;
+
+.mainNav {
+  background-color: darkslategrey;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  justify-content: space-between;
+  z-index: 1100; //check what this is
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: $nav-height;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+  .mainNavLogoContainer {
+    display: flex;
+    padding-left: 24px;
+    height: 100%;
+  }
+}
+
+.mainNavItemsContainer {
+  padding-right: 24px;
+  margin: 0;
+  max-width: 900px; //change breakpoint
+}
+
+.mainNavItemsContainer ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 32px;
+}
+
+.mainNavItemsContent {
+  justify-content: flex-end;
+  display: block;
+  max-height: 100%;
+
+  li {
+    padding-left: 40px;
+  }
+
+  img {
+    max-height: 100%;
+  }
+}

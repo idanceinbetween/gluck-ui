@@ -1,0 +1,42 @@
+// Typography
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$assistant-font-family: 'Assistant' !default;
+$roboto-font-family: 'Roboto';
+$header-font-family: $roboto-font-family, serif;
+$base-font-family: $assistant-font-family, 'san-serif';
+
+$mobile-font-size: 15px;
+$desktop-font-size: 18px;
+
+$primary-color: #333;
+
+// Line heights
+$desktop-line-height: 25px;
+$mobile-line-height: 22px;
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: $base-font-family;
+  font-size: $mobile-font-size;
+  line-height: $mobile-line-height;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+a {
+  color: green;
+}
+
+a:visited {
+  color: yellow;
+}
