@@ -1,10 +1,10 @@
 import React from 'react';
 import { MainNavigation } from './MainNavigation';
-import { renderWithRouter } from '../testUtils';
+import { render } from '../testUtils';
 
 describe('<MainNavigation/>', () => {
   it('has logo, site name and correct headings, icons and links', () => {
-    const { getByText, getByAltText } = renderWithRouter(<MainNavigation />);
+    const { getByText, getByAltText } = render(<MainNavigation />);
     expect(getByText('glūck')).toBeInTheDocument();
     expect(getByAltText('logo')).toBeInTheDocument();
     expect(getByText('All Gifts')).toBeInTheDocument();

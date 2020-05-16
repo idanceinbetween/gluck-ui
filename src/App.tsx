@@ -1,14 +1,14 @@
-import React, { ReactElement } from "react";
-import "./App.css";
-import { Link, Route, Switch } from "react-router-dom";
-import { MainNavigation } from "./mainNavigation/MainNavigation";
+import React, { ReactElement } from 'react';
+import './App.css';
+import { Link, Route, Switch } from 'react-router-dom';
+import { MainNavigation } from './mainNavigation/MainNavigation';
 
 function Landing(): ReactElement {
   return (
     <>
       <div>glūck</div>
       <div>gifting made happy</div>
-      <Link to={"/about"}>
+      <Link to={'/about'}>
         <button>Find out more</button>
       </Link>
     </>
@@ -20,11 +20,11 @@ function App() {
     <>
       <MainNavigation />
       <Switch>
-        <Route path="/about">
+        <Route path='/about'>
           <div>About Page</div>
         </Route>
 
-        <Route path="/">
+        <Route path='/'>
           <Landing />
         </Route>
       </Switch>
