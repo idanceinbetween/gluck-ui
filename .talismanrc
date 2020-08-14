@@ -3,6 +3,6 @@ fileignoreconfig:
   checksum: f0045b3f8905880e17671222a920193a34a64f59b0d5fe52d8829b8da70e50dd
   ignore_detectors: []
 - filename: yarn.lock
-  checksum: 59bc03c9c37f2aa9ab5947554476974a1d777ba35abea31d68731e28413ec035
+  checksum: 454dcc9f63cdbd105b44ccee957087a70f8310e6c0fb5b1e8fed7f1bb6135d94
   ignore_detectors: []
 scopeconfig: []
